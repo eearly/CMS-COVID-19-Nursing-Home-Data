@@ -1,7 +1,8 @@
-
--- Data Split into Months
-	-- submitted_data = yes
-	-- passed_quality_assurance = yes
+/*
+- Data Split into Months
+	- submitted_data = yes
+	- passed_quality_assurance = yes
+*/
 
 select to_char(week_ending, 'YYYY-MM') as month_of_year
 	, federal_provider_number
@@ -19,8 +20,6 @@ group by to_char(week_ending, 'YYYY-MM')
 	, provider_state
 	, number_of_all_beds 
 
-
-
 -- Avg. nursing home occupancy per month 
 
 	select provider_name
@@ -32,10 +31,11 @@ group by to_char(week_ending, 'YYYY-MM')
 	group by provider_name, to_char(week_ending, 'YYYY-MM')
 
 
-
--- total confirmed patient cases of covid-19 over a year/ per month
--- staff confirmed cases of covid-19 over a year/ per month
--- total covid-19 resident deaths within the year/ per month
+/*
+- total confirmed patient cases of covid-19 over a year/ per month
+- staff confirmed cases of covid-19 over a year/ per month
+- total covid-19 resident deaths within the year/ per month 
+*/
 	
 select provider_name
 	, to_char(week_ending, 'YYYY-MM') as month_of_year
@@ -47,10 +47,11 @@ where submitted_data = 'Y'
 AND passed_quality_assurance_check = 'Y'
 group by provider_name, to_char(week_ending, 'YYYY-MM')
 
+/*	
+- percentage of resident that are up-to-date with vaccinations
+- percentage of staff that are up-to-date with vaccinations
+*/
 	
--- percentage of resident that are up-to-date with vaccinations
--- percentage of staff that are up-to-date with vaccinations
-
 select provider_name
 	, to_char(week_ending, 'YYYY-MM') as month_of_year
 	, avg(percentage_of_current_healthcare_personnel_up_to_date_with_covi) as percent_staff_vaccinated
