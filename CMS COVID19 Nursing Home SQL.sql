@@ -1,15 +1,3 @@
-/*
-Data I want to use:
-- Data split into months
-- submitted_data = yes
-- passed_quality_assurance = yes
-- nursing home occupancy per month
-- total confirmed patient cases of covid-19 within the year/ per month
-- staff confirmed cases of covid-19 within the year/ per month
-- total covid-19 deaths within the year/ per month
-- percentage of resident that are up-to-date with vaccinations
-- percentage of staff that are up-to-date with vaccinations
-*/
 
 -- Data Split into Months
 	-- submitted_data = yes
